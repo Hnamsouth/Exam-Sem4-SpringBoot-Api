@@ -47,6 +47,7 @@ public class StudentScore {
                 .grade(getGrade())
                 .build();
     }
+    @JsonIgnore
     private String getGrade(){
         double avg = (0.3*this.score1 + 0.7 * this.score2);
         if(avg >= 8.0){
