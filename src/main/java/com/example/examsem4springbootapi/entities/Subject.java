@@ -1,5 +1,6 @@
 package com.example.examsem4springbootapi.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
@@ -29,7 +30,7 @@ public class Subject {
     @OneToMany(mappedBy = "subject", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
-    @JsonManagedReference
+    @JsonBackReference
     private List<StudentScore> studentScores;
 
 }

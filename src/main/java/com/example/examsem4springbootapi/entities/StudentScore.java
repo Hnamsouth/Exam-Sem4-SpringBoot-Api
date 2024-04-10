@@ -4,6 +4,7 @@ package com.example.examsem4springbootapi.entities;
 import com.example.examsem4springbootapi.entities.response.StudentResponse;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -28,12 +29,12 @@ public class StudentScore {
 
     @ManyToOne
     @JoinColumn(name = "student_id")
-    @JsonBackReference
+    @JsonManagedReference
     private Student student;
 
     @ManyToOne
     @JoinColumn(name = "subject_id")
-    @JsonBackReference
+    @JsonManagedReference
     private Subject subject;
 
     @JsonIgnore
