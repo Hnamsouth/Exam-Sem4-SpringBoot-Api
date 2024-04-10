@@ -5,6 +5,7 @@ import com.example.examsem4springbootapi.entities.request.CreateStudent;
 import com.example.examsem4springbootapi.entities.request.CreateStudentScore;
 import com.example.examsem4springbootapi.entities.request.CreateSubject;
 import com.example.examsem4springbootapi.service.impl.StudentServiceImpl;
+import jakarta.annotation.Nullable;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +22,7 @@ public class StudentController {
     private final StudentServiceImpl studentService;
 
     @GetMapping
-    public ResponseEntity<?> getStudentInfo(@NotNull Long id){
+    public ResponseEntity<?> getStudentInfo(@Nullable Long id){
         return studentService.getStudentInfo(id);
     }
     // create student api
